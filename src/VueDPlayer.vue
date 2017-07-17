@@ -40,6 +40,10 @@
         validator(value) {
           return typeof value.url === 'string'
         }
+      },
+      contextmenu: {
+        type: Object,
+        default: []
       }
     },
     data() {
@@ -61,7 +65,8 @@
           url: this.video.url,
           pic: this.video.pic,
           type: 'normal'
-        }
+        },
+        contextmenu: this.contextmenu
       })
 
       player.on('play', () => {
